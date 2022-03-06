@@ -1,0 +1,100 @@
+There 's hardly any coffee left in the pot . : There 's almost no coffee left in the pot . :: There 's hardly any water in the bucket . : x  =>  x = There 's almost no water in the bucket .
+I do not agree with you on this point . : I agree with you on this point . :: I do not agree with you . : x  =>  x = I agree with you .
+I do not know how else to explain it . : I do not know how else to say it . :: I do not know how to explain it . : x  =>  x = I do not know how to say it .
+He did not get up early in the morning . : I get up early in the morning . :: He did not get up early . : x  =>  x = I get up early .
+Hurry up , and you 'll catch the train . : Hurry up , or you 'll miss the train . :: Hurry up , and you 'll catch the bus . : x  =>  x = Hurry up , or you 'll miss the bus .
+Hurry up , and you 'll catch the train . : Hurry up , or you will miss the train . :: Hurry up , and you 'll catch the bus . : x  =>  x = Hurry up , or you will miss the bus .
+Which do you like better , spring or autumn ? : Which do you like better , apples or bananas ? :: Which do you prefer , spring or autumn ? : x  =>  x = Which do you prefer , apples or bananas ?
+I do not know what to say about that . : I do not know what to do now . :: I do not know about that . : x  =>  x = I do not think so .
+Do you have any idea who wrote this book ? : Do you have any idea who she is ? :: Do you know who wrote this book ? : x  =>  x = Do you know who she is ?
+I will get you a bike for your birthday . : I will give you a bike for your birthday . :: I will get you a bicycle for your birthday . : x  =>  x = I will give you a bicycle for your birthday .
+I want you to tell me what to do . : I wish you had told me what to do . :: I want you to tell me the truth . : x  =>  x = I wish you had told me the truth .
+I want you to tell me what to do . : I ca not tell you what to do . :: I want you to tell me the truth . : x  =>  x = I ca not tell you the truth .
+It 's very kind of you to say so . : It 's very kind of you to help me . :: It is kind of you to say so . : x  =>  x = It is kind of you to help me .
+Hurry up , or you 'll miss the bus . : Hurry up , or you 'll miss the train . :: Hurry up , or you will miss the bus . : x  =>  x = Hurry up , or you will miss the train .
+Hurry up , or you 'll miss the bus . : Hurry up , or you 'll miss the train . :: Hurry up , and you 'll catch the bus . : x  =>  x = Hurry up , and you 'll catch the train .
+Hurry up , or you 'll miss the bus . : Hurry up , or you will miss the bus . :: Hurry up , or you 'll be late . : x  =>  x = Hurry up , or you will be late .
+I just do not want to fight with you . : I just do not want to lose you . :: I do not want to upset you . : x  =>  x = I do not want to know .
+I 'd like to have another cup of coffee . : I 'd like to have a glass of water . :: I 'd like another cup of coffee . : x  =>  x = I 'd like a glass of water .
+I 'd like to have another cup of coffee . : I would like to have a cup of coffee . :: I 'd like another cup of coffee . : x  =>  x = I would like a cup of coffee .
+I want a book to read on the train . : I want something to read on the train . :: I want a book to read . : x  =>  x = I want something to read .
+I do not have time to do that today . : We do not have time to do that today . :: I have plenty of time to do that . : x  =>  x = We have plenty of time to do that .
+I do not have time to do that today . : We do not have time to do that today . :: I do not have time to waste . : x  =>  x = We do not have time to waste .
+I do not know what 's best for me . : I do not know what came over me . :: I do not know what 's happening . : x  =>  x = I do not know what happened .
+How many books do you have in your bag ? : What do you have in your bag ? :: How many books do you have ? : x  =>  x = What do you have ?
+You 're not from around here , are you ? : You 're not staying here , are you ? :: You 're confused again , are not you ? : x  =>  x = You 're disappointed , are not you ?
+You do not have to get up so early . : Tom did not have to get up so early . :: You do not need to come so early . : x  =>  x = Tom did not need to come so early .
+I really do not want to talk about it . : I really do not want to live here . :: I do not want to talk about it . : x  =>  x = I do not want to live here .
+I really do not want to talk about it . : I really do not want to do that . :: I do not want to talk about it . : x  =>  x = I do not want to do that .
+I really do not want to talk about it . : I do not want to talk about it . :: I really do not want to play . : x  =>  x = I do not want to play .
+I really do not want to talk about it . : I do not want to talk about it . :: I really do not want to go . : x  =>  x = I do not want to go .
+I do not want to go to bed yet . : I do not want to let you go . :: I do not want to go alone . : x  =>  x = I do not want to know .
+I do not understand what 's happening to me . : I do not believe this is happening to me . :: I do not understand what 's happening . : x  =>  x = I do not believe this is happening .
+I think that 's the right thing to do . : I thought that was the right thing to do . :: I think it 's the right thing to do . : x  =>  x = I thought it was the right thing to do .
+I just do not want to talk to you . : I just do not want you to get hurt . :: I do not want to talk to you . : x  =>  x = I do not want you to get hurt .
+I just do not want to talk to you . : I just do not want to talk about it . :: I do not want to talk to you . : x  =>  x = I do not want to talk about it .
+I just do not want to talk to you . : I just do not want to talk about it . :: I do not need to talk to you . : x  =>  x = I do not need to talk about it .
+I just do not want to talk to you . : I just do not want to do it again . :: I do not want to talk to you . : x  =>  x = I do not want to do it again .
+I just do not want to talk to you . : I just do not want to go with you . :: I do not want to talk to you . : x  =>  x = I do not want to go with you .
+I just do not want to talk to you . : I just do not want to hurt anyone . :: I do not want to talk to you . : x  =>  x = I do not want to hurt anyone .
+I just do not want to talk to you . : I do not want to talk to you . :: I just do not want to die . : x  =>  x = I do not want to die .
+I do not ever want to talk about it . : I do not ever want to see you again . :: I do not want to talk about it . : x  =>  x = I do not want to see you again .
+I do not ever want to talk about it . : I do not ever want to hurt you . :: I do not want to talk about it . : x  =>  x = I do not want to hurt you .
+Tom does not want to take a walk now . : I do not want to take a walk now . :: Tom does not want to eat lunch now . : x  =>  x = I do not want to eat lunch now .
+Why do not you talk to me about it ? : Why did not you talk to me about it ? :: What do you want to talk to me about ? : x  =>  x = What did you want to talk to me about ?
+Why do not you talk to me about it ? : Why did not you talk to me about it ? :: Why do not you listen to me ? : x  =>  x = Why did not you listen to me ?
+There is an urgent need for a new system . : There is an urgent need for blood donations . :: There is an urgent need for experienced pilots . : x  =>  x = There is an urgent need for volunteers .
+I am looking forward to seeing you next Sunday . : I am looking forward to hearing from you soon . :: I 'm looking forward to seeing you next Sunday . : x  =>  x = I 'm looking forward to hearing from you soon .
+I am looking forward to seeing you next Sunday . : I 'm looking forward to seeing you next Sunday . :: I am looking forward to seeing you again . : x  =>  x = I 'm looking forward to seeing you again .
+I am looking forward to seeing you next Sunday . : I 'm looking forward to seeing you next Sunday . :: I am looking forward to seeing you . : x  =>  x = I 'm looking forward to seeing you .
+I just do not know what to do anymore . : I just do not know how to do it . :: I do not know what to do anymore . : x  =>  x = I do not know how to do it .
+I just do not know what to do anymore . : I just do not know what to say . :: I do not know what to do anymore . : x  =>  x = I do not know what to say .
+I just do not know what to do anymore . : I do not know what to do anymore . :: I just do not know what to do . : x  =>  x = I do not know what to do .
+I have no idea what Tom said to Mary . : I do not know what Tom said to Mary . :: I have no idea what to do next . : x  =>  x = I do not know what to do next .
+I have no idea what Tom said to Mary . : I do not know what Tom said to Mary . :: I have no idea what to expect . : x  =>  x = I do not know what to expect .
+I 'm sorry , I ca not help you . : I 'm sorry , I did not hear you . :: Sorry , I ca not help you . : x  =>  x = Sorry , I did not hear you .
+I would rather stay at home than go fishing . : I 'd rather stay at home than go fishing . :: I would rather stay at home than go out . : x  =>  x = I 'd rather stay at home than go out .
+Was there anything else you wanted me to do ? : Is there anything else you want me to do ? :: Was there something you wanted to tell me ? : x  =>  x = Is there something you want to tell me ?
+I ca not believe you 'd be so stupid . : I ca not believe you 'd do that . :: I ca not believe I was so stupid . : x  =>  x = I ca not believe I did that .
+I do not know what else to tell you . : I do not know what to expect . :: I do not know what you mean . : x  =>  x = I do not know exactly .
+I do not know what you 're waiting for . : I do not know what you really want . :: I do not know what I owe you . : x  =>  x = I do not know what I know .
+I 'd like to know what 's going on . : I 'd like to know what it is . :: I want to know what 's going on . : x  =>  x = I want to know what it is .
+I 'd like to know what 's going on . : I want to know what 's going on . :: I 'd like to know what you mean . : x  =>  x = I want to know what you mean .
+I am looking forward to hearing from you soon . : I 'm looking forward to hearing from you soon . :: I am looking forward to seeing you again . : x  =>  x = I 'm looking forward to seeing you again .
+I am looking forward to hearing from you soon . : I 'm looking forward to hearing from you soon . :: I am looking forward to seeing you . : x  =>  x = I 'm looking forward to seeing you .
+I am looking forward to hearing from you soon . : I am looking forward to seeing you again . :: I look forward to hearing from you soon . : x  =>  x = I look forward to seeing you again .
+I think you know who I 'm talking about . : I think you know what I 'm talking about . :: I do not know who you 're talking about . : x  =>  x = I do not know what you 're talking about .
+I think I 'd like to be your friend . : I think I 'd like to be a teacher . :: I 'd like to be your friend . : x  =>  x = I 'd like to be a teacher .
+I 'd like to have a glass of water . : I 'd like to have a word with you . :: I would like a glass of water . : x  =>  x = I would like a word with you .
+I 'd like to have a glass of water . : I would like to have a cup of coffee . :: I 'd like a glass of water . : x  =>  x = I would like a cup of coffee .
+He has a lot of money in the bank . : Tom has a lot of money in the bank . :: He has a lot of money . : x  =>  x = Tom has a lot of money .
+It 's a pleasant day , is not it ? : It 's a nice day , is not it ? :: It 's his , is not it ? : x  =>  x = It 's him , is not it ?
+Could you show me the way to the station ? : Could you show me the way to the port ? :: Could you tell me the way to the station ? : x  =>  x = Could you tell me the way to the port ?
+I do not ever want to see you again . : I do not ever want to hurt you . :: I do not want to see you again . : x  =>  x = I do not want to hurt you .
+I do not ever want to see you again . : I do not ever want to hurt you . :: I 'm not going to see you again . : x  =>  x = I 'm not going to hurt you .
+I do not believe that Tom can speak French . : I do not think that Tom can speak French . :: I believe Tom can do that . : x  =>  x = I think Tom can do that .
+I have a lot of things to do today . : I have a lot of work to do today . :: I have a lot of things to do . : x  =>  x = I have a lot of work to do .
+I do not have time to answer any questions . : I do not have time to relax . :: I do not have time to talk . : x  =>  x = I do not have time .
+I do not believe this is happening to me . : I do not think Tom is listening to me . :: I do not believe this is happening . : x  =>  x = I do not think Tom is listening .
+I just do not want you to get hurt . : I just do not want to talk about it . :: Tom does not want you to get hurt . : x  =>  x = Tom does not want to talk about it .
+I just do not want you to get hurt . : I just do not want to talk about it . :: I do not want you to get hurt . : x  =>  x = I do not want to talk about it .
+I just do not want you to get hurt . : I just do not want to do it again . :: I do not want you to get hurt . : x  =>  x = I do not want to do it again .
+I just do not want you to get hurt . : I just do not want to go with you . :: I do not want you to get hurt . : x  =>  x = I do not want to go with you .
+I just do not want you to get hurt . : I just do not want to hurt anyone . :: I do not want you to get hurt . : x  =>  x = I do not want to hurt anyone .
+I just do not want you to get hurt . : Tom does not want you to get hurt . :: I just do not want to die . : x  =>  x = Tom does not want to die .
+I just do not want you to get hurt . : I do not want you to get hurt . :: I just do not want to die . : x  =>  x = I do not want to die .
+It 's a beautiful day , is not it ? : It 's a nice day , is not it ? :: It 's his , is not it ? : x  =>  x = It 's him , is not it ?
+She talks as if she knew everything about it . : She acted as if she knew nothing about it . :: She talks as if she knew everything . : x  =>  x = She acted as if she knew nothing .
+I do not think it 'll rain this afternoon . : I do not think it 'll rain tomorrow . :: I think it wo not rain this afternoon . : x  =>  x = I think it wo not rain tomorrow .
+You do not know what you 're talking about . : I do not know what you 're talking about . :: You have no idea what you 're talking about . : x  =>  x = I have no idea what you 're talking about .
+I do not know what to do about it . : I do not want to talk about it . :: I do not know what to do . : x  =>  x = I do not want to talk .
+Why do not you want to come with us ? : Why do not you want to go first ? :: Do you want to come with us ? : x  =>  x = Do you want to go first ?
+I just did not want you to get hurt . : I just did not want you to worry . :: I do not want you to get hurt . : x  =>  x = I do not want you to worry .
+I just did not want you to get hurt . : I just did not want to upset you . :: I do not want you to get hurt . : x  =>  x = I do not want to upset you .
+I do not have time for all of this . : I do not have the time for this . :: I really do not have time for this . : x  =>  x = I really do not have the time .
+I do not have time for all of this . : I do not have the time for this . :: I do not have time for this . : x  =>  x = I do not have the time .
+I do not have time for all of this . : I do not have the time for this . :: I do not have time for that . : x  =>  x = I do not have the time .
+I do not have time for all of this . : I do not have time for this . :: I do not have time for that . : x  =>  x = I do not have time .
+I do not have time to explain it now . : You do not have to do it now . :: I do not have time to talk . : x  =>  x = You do not have to go .
+I do not want to get you in trouble . : I did not want you to get involved . :: I do not want to ask you anything . : x  =>  x = I did not want you to know .
+I do not want to get you in trouble . : I do not want to ask you anything . :: I do not want to get involved . : x  =>  x = I do not want to know .
