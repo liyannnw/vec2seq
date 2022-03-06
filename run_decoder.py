@@ -156,7 +156,7 @@ if __name__ == '__main__':
     print("==={}ing THE DECODING NETWORK===\n".format(run))
     if run == "train":
         if path.exists(opt.save_path+".pt"):
-            print("Error: duplicate name of the path for saving model.")
+            print("Error: The file already exists, please change the file name.")
             sys.exit(0)
 
         dec.apply(init_weights)
@@ -172,7 +172,7 @@ if __name__ == '__main__':
 
     elif run == "test":
         if path.exists(opt.save_path+".tsv"):
-            print("Error: duplicate name of the path for saving results.")
+            print("Error: The file already exists, please change the file name.")
             sys.exit(0)
 
         dec.load_state_dict(torch.load(opt.pretrained_decoder_path))
