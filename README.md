@@ -32,7 +32,7 @@ Train the decoder using:
 
 
 
-Preprocessing: encode sentences in analogies as vectors, and save vectors and sequences in a `.npz` file:
+Preprocessing analogies: encode sentences in analogies as vectors, and save vectors and sequences in a `.npz` file:
 
         python3 preprocess_data.py --text_data_path [PATH_TO_TRAIN/VALIDATE/TEST_SET] --embed_model_name_or_path [ENCODER_NAME_OR_PATH]
         
