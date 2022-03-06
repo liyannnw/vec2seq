@@ -18,7 +18,7 @@ For more, please see the paper.
 To run the analogy solver, start by training a vector decoder on the text data. 
 To customize your decoder, you need to modify the settings in `decoder_config.py`
 * To train or test a decoder model, you need to specify `run` (e.g., run = "train")
-* Place data files in a specific directory, and pass the path to `data_dir`. Note that one sentence per line in each file. Don't forget to specify the `max_original_sent_len` (the maximum length of sentences).
+* Place data files in a specific directory, and pass the path to `data_dir`. Note that one sentence per line in each file. Be sure to specify the `max_original_sent_len` (the maximum length of sentences).
 * Customize the vector decoder model. For example, to train a basic RNN with single loss function : `decoder_net = "basicrnn"`, `decoder_loss = "sl"`.
 * Set the sentence embedding model
 * Create a directory to save output files, set `result_dir` to point to the dir
