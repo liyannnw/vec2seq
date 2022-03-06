@@ -98,7 +98,7 @@ def read_argv():
     parser.add_argument("--result_dir", dest='result_dir', action="store",default=cfg.result_dir,
                         help="")
     parser.add_argument("--save_path", dest='save_path', action="store",default=cfg.save_path,
-                        help="save decoder model or decoding results")
+                        help="Prefix for the paths of decoder model and decoding results")
 
 
     return parser.parse_args()
