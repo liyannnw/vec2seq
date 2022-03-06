@@ -36,7 +36,7 @@ Preprocessing: encode sentences in analogies as vectors, and save vectors and se
 
         python3 preprocess_data.py --text_data_path [PATH_TO_TRAIN/VALIDATE/TEST_SET] --embed_model_name_or_path [ENCODER_NAME_OR_PATH]
         
-Note: The input file contains sentence analogies for training or validation or testing.
+Note: The text data file contains sentence analogies.
 One analogy per line. The format is `'A \t B \t C \t D \n'`.
 
 Edit the setting file `solver_config` to configure the analogy solver.
