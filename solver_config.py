@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
-data_dir_path = "vec2seq_toy/"
+data_dir_path = "/mango/homes/WANG_Liyan/data/vec2seq_toy/"
 train_path = data_dir_path + "nlg.train.npz"
 valid_path = data_dir_path + "nlg.valid.npz"
 test_path = data_dir_path + "nlg.test.npz"
