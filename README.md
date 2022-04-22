@@ -39,7 +39,7 @@ To customize your decoder, you need to modify the settings in `decoder_config.py
 
 
  -->
-### Sentence analogy solver
+<!-- ### Sentence analogy solver
 
 Preprocessing: encode sentences in analogies as vectors, and save vectors and sequences in a `.npz` file:
 
@@ -60,4 +60,4 @@ After you trained a decoder and an analogy solver, you can use them to solve sen
         
 The results will be saved in the format:
 `'A \t B \t C \t D (reference) \t D (prediction) \n'`.
-
+ -->
