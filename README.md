@@ -15,23 +15,19 @@ For more, please see the paper.
 
 ## Getting started
 
-To easily run experiments, you can use following scripts:
-* `train_decoder.sh`: train a decoder to decode sentence vectors derived from a specific encoder model
-* `test_decoder.sh`: decode vectors with the use of a learned decoder
-* `train_VectorAnalogySolver.sh`: train a neural network to learn the mapping between premise vectors (ABC) and the reference vectors (D) 
-* `solve_sentence_analogy.sh`: solve sentence analogies using a decoder and a vector analogy solver
-
 ### Decoder
 
-Please check out the notebook `vector_decoding.ipynb` (has NOT been corrected yet after code refactoring).
-The notebook is a copy of the script `run_decoder.py`.
+Please check out the notebook `vector_decoding.ipynb`.
 
-<!-- You can either train a decoder model using:
+
+
+The notebook is a copy of the script `run_decoder.py`.
+You can either train a decoder model using:
         
         python3 run_decoder.py
         
 
- -->
+
 
 <!-- To run the analogy solver, start by training a vector decoder on the text data. 
 To customize your decoder, you need to modify the settings in `decoder_config.py`
@@ -47,7 +43,7 @@ To customize your decoder, you need to modify the settings in `decoder_config.py
 
 Preprocessing: encode sentences in analogies as vectors, and save vectors and sequences in a `.npz` file:
 
-        python3 preprocessing.py --text_data_path [PATH_TO_TRAIN/VALIDATE/TEST_SET] --embed_model_name_or_path [ENCODER_NAME_OR_PATH]
+        python3 preprocess_data.py --text_data_path [PATH_TO_TRAIN/VALIDATE/TEST_SET] --embed_model_name_or_path [ENCODER_NAME_OR_PATH]
         
 Note: The text data file contains sentence analogies.
 One analogy per line. The format is `'A \t B \t C \t D \n'`.
@@ -56,12 +52,12 @@ Edit the setting file `solver_config` to configure the analogy solver.
 
 Train a network with the capability of generating the vector of answer sentence D given three known vectors:
 
-        python3 run_VectorAnalogySolver.py
+        python3 train_AnalogySolverinSpace.py
            
-After you trained a decoder and an analogy solver, you can use them to solve sentence analogy using the script `run_AnalogySolver.py`
+After you trained a decoder and an analogy solver, you can use them to solve sentence analogy using the script `test_AnalogySolver.py`
         
-        python3 run_AnalogySolver.py
+        python3 test_AnalogySolver.py
         
 The results will be saved in the format:
-`'A \t B \t C \t D (reference) \t D (prediction) \n'`. -->
-
+`'A \t B \t C \t D (reference) \t D (prediction) \n'`.
+ -->
