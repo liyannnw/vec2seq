@@ -33,10 +33,10 @@ class trainer():
     def __init__(self,decoder=None,encoder=None,train_set=None,valid_set=None,valid_path=None,batch_size=128,max_length=12,
             corpora_field=None,loss_mode="ml",
             epochs=100,clip=1,patience=50,model_save_path=None,
-            device="cpu",teacher_forcing_ratio=0.75):
+            device="cpu",teacher_forcing_ratio=0.75,
+            init_token=None,eos_token=None,pad_token=None):
 
-        # self.encoder=encoder  
-        # self.decoder = decoder  
+
 
         self.train_set= train_set
         self.valid_set = valid_set
@@ -56,13 +56,13 @@ class trainer():
 
         self.teacher_forcing_ratio = teacher_forcing_ratio
 
-        self.decode = decoding(encoder=encoder,decoder=decoder,loss_mode=loss_mode,corpora_field=corpora_field,max_length=max_length,device=device)
+        self.decode = decoding(encoder=encoder,decoder=decoder,loss_mode=loss_mode,corpora_field=corpora_field,max_length=max_length,device=device,init_token=init_token,eos_token=eos_token,pad_token=pad_token)
 
-        self.all_test_sents = SentenceLoader(valid_path, init_token=self.decode.corpora_field.init_token, eos_token=self.decode.corpora_field.eos_token)
+        self.all_test_sents = SentenceLoader(valid_path, init_token=init_token, eos_token=eos_token)
 
         self.early_stopping = EarlyStopping(patience=patience, verbose=True)
         self.optimizer = optim.Adam(self.decode.decoder.parameters())
-        self.TRG_PAD_IDX = self.decode.corpora_field.vocab.stoi[self.decode.corpora_field.pad_token]
+        self.TRG_PAD_IDX = self.decode.corpora_field.stoi[pad_token]
         self.criterion = nn.CrossEntropyLoss(ignore_index=self.TRG_PAD_IDX)
 
 
@@ -76,8 +76,7 @@ class trainer():
 
             start_time1 = time.time()
 
-            # train
-            # print("training")
+
             epoch_loss = 0
             for i, batch in enumerate(self.train_set):
                 truth = batch.sent
@@ -88,11 +87,6 @@ class trainer():
 
                 batch_sents = [self.decode.index2sent(truth[:,i],original=False) for i in range(truth.size(1))]
 
-                # if decode.encoder.name() == "sbert":
-                #     context_vecs = decode.encoder.sbert_corpus2vecs(batch_sents)
-                # else:
-                #     context_vecs = [decode.encoder.sent2vec(sent) for sent in batch_sents]
-                #     context_vecs = torch.cat(context_vecs, dim=1)  # ==hidden state == cell state [1,128,300]
 
                 context_vecs = self.decode.encoder.sents2vecs(batch_sents)
 
@@ -114,8 +108,7 @@ class trainer():
 
             epoch_train_loss = epoch_loss / len(self.train_set)
 
-            # validate
-            # print("validation")
+
             epoch_loss = 0
             with torch.no_grad():
 
@@ -126,13 +119,6 @@ class trainer():
                     batch_sents = self.all_test_sents[i*self.batch_size:i*self.batch_size+truth.size(1)]
                     # batch_sents = [decode.index2sent(truth[:, i], original=False) for i in range(truth.size(1))]
 
-
-                    # if decode.encoder.name() == "sbert":
-                    #     context_vecs = decode.encoder.sbert_corpus2vecs(batch_sents)
-                    # else:
-                    #
-                    #     context_vecs = [decode.encoder.sent2vec(sent) for sent in batch_sents]
-                    #     context_vecs = torch.cat(context_vecs, dim=1)  # ==hidden state == cell state [1,128,300]
 
                     context_vecs = self.decode.encoder.sents2vecs(batch_sents)
 
@@ -167,8 +153,11 @@ class trainer():
 
         if self.model_save_path:
             # decoder_model_path = self.model_save_path #+ ".pt"
-            torch.save(self.decode.decoder.state_dict(), self.model_save_path)
+            torch.save(self.decode.decoder.state_dict(), self.model_save_path+'/checkpoint.pt')
             print("saved model.")
+
+
+
 
 
 

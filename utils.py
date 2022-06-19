@@ -3,12 +3,13 @@
 import torch
 from torch.utils import data
 import numpy as np
-
+import json
 ################################################################################
 __author__ = "WANG Liyan <wangliyan0905@toki.waseda.jp>"
 __date__, __version__ = "16/01/2021", "1.0"
 
 ################################################################################
+
 
 
 class AnalogicalDataLoader(data.Dataset):

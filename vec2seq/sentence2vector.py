@@ -13,7 +13,7 @@ __date__, __version__ = "26/03/2020", "1.0"  # create
 __description__ = "Several sentence embedding methods."
 
 ################################################################################
-class encoder():
+class encoding():
     def __init__(self, model_name=None,model_path=None, device="cpu"):#mode:{"avg","sum","cls"}method="sbert",mode=None,
 
 

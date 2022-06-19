@@ -19,14 +19,19 @@ __description__ = "Decoding vectors into sentences"
 class decoding():
     def __init__(self,encoder=None,decoder=None,
                     loss_mode="ml",
-                    corpora_field=None,max_length=12,device="cpu"):
+                    corpora_field=None,max_length=12,device="cpu",
+                 init_token=None,eos_token=None,pad_token=None):
 
         self.device = device
 
         self.encoder = encoder
         self.decoder = decoder
         self.dec_net_type = self.decoder.net_type
-        
+
+
+        self.init_token=init_token
+        self.eos_token=eos_token
+        self.pad_token=pad_token
 
         self.loss_mode = loss_mode
 
@@ -39,16 +44,16 @@ class decoding():
 
         # index_list = []
         words = sentence.split(" ")
-        if words[0] != self.corpora_field.init_token:
-            words = [self.corpora_field.init_token] + words + [self.corpora_field.eos_token]
+        if words[0] != self.init_token:
+            words = [self.init_token] + words + [self.eos_token]
 
         if pad:
             assert len(words) <= self.max_sent_len, print("Error: incorrect maximum sentence length setting.")
 
-            words = words + [self.corpora_field.pad_token] * (self.max_sent_len - len(words))
+            words = words + [self.pad_token] * (self.max_sent_len - len(words))
 
 
-        index_list = [self.corpora_field.vocab.stoi[word] for word in words]
+        index_list = [self.corpora_field.stoi[word] for word in words]
 
         return torch.from_numpy(np.array(index_list)).to(self.device)
 
@@ -57,14 +62,23 @@ class decoding():
 
 
         sequence = []
+
         for index in index_list:
-            if index != self.corpora_field.vocab.stoi[self.corpora_field.pad_token]:#PAD_index
-                sequence.append(self.corpora_field.vocab.itos[index])
+
+            if isinstance(index,int):
+                index = index
+            else:
+                index=index.item()
+
+            if index != self.corpora_field.stoi[self.pad_token]:#PAD_index
+                sequence.append(self.corpora_field.itos[index])
+
+
 
         if original: # used to transfer predicted index into sentence
             sent_tmp=[]
             for w in sequence[1:]:
-                if w == self.corpora_field.eos_token: #"EOS"
+                if w == self.eos_token: #"EOS"
                     break
                 else:
                     sent_tmp.append(w)
@@ -112,24 +126,25 @@ class decoding():
         if train_mode:
             input = sents_ref[0, :]  # trg=[len,batch_size]
         else:
-            input = [self.corpora_field.vocab.stoi[self.corpora_field.init_token]] * minibatch_size # ["SOS"] * minibatch_size
+            input = [self.corpora_field.stoi[self.init_token]] * minibatch_size # ["SOS"] * minibatch_size
+
 
         for t in range(1, sent_len):
-            tokens_batch = [self.corpora_field.vocab.itos[input[i]] for i in range(minibatch_size)]
 
-            # input_embeddings = self.encoder.sents2vecs(tokens_batch)
+            tokens_batch=[]
+            for i in range(minibatch_size):
+                if isinstance(input[i], int):
+                    tokens_batch.append(self.corpora_field.itos[input[i]])
+                else:
+                    tokens_batch.append(self.corpora_field.itos[input[i].item()])
+
+
             if "bert" in self.encoder.name():
                 input_embeddings = self.encoder.sents2vecs(tokens_batch)
             else:
                 input_embeddings = [self.encoder.word2vec(token) for token in tokens_batch]
                 input_embeddings = torch.cat(input_embeddings, dim=1)
 
-
-            # if self.encoder.name() == "sbert":
-            #     input_embeddings = self.encoder.sbert_corpus2vecs(tokens_batch)
-            # else:
-            #     input_embeddings = [self.encoder.word2vec(token) for token in tokens_batch]
-            #     input_embeddings = torch.cat(input_embeddings, dim=1)
 
 
             if self.dec_net_type == "conrnn":
@@ -153,6 +168,7 @@ class decoding():
                     output, hidden, cell = self.decoder(input_embeddings, hidden, cell)
                     # outputs_embeddings = None
 
+
             # place predictions in a tensor holding predictions for each token
             dec_output[t] = output  # =[batch_size, trg_vocab_size]
             # batch_output_embeddings.append(output_embeddings)
@@ -170,15 +186,16 @@ class decoding():
         # eos
         if self.loss_mode == "ml":
             # input = sents_ref[-1, :]
-            input = [self.corpora_field.vocab.stoi[self.corpora_field.eos_token]] * minibatch_size
-            tokens_batch = [self.corpora_field.vocab.itos[input[i]] for i in range(minibatch_size)]
+            input = [self.corpora_field.stoi[self.eos_token]] * minibatch_size
 
-            # if self.encoder.name() == "sbert":
-            #     input_embeddings = self.encoder.sbert_corpus2vecs(tokens_batch)
-            # else:
-            #     input_embeddings = [self.encoder.word2vec(token) for token in tokens_batch]
-            #     input_embeddings = torch.cat(input_embeddings, dim=1)
-            #
+            tokens_batch=[]
+            for i in range(minibatch_size):
+                if isinstance(input[i], int):
+                    tokens_batch.append(self.corpora_field.itos[input[i]])
+                else:
+                    tokens_batch.append(self.corpora_field.itos[input[i].item()])
+
+
 
             if "bert" in self.encoder.name():
                 input_embeddings = self.encoder.sents2vecs(tokens_batch)
@@ -207,8 +224,7 @@ class decoding():
             index_tmp = tmp.argmax(1)
             sent_tmp = self.index2sent(index_tmp, original=True)
             if ref:
-                # ref_index_tmp = ref[:, j]
-                # print(ref[j])
+
                 if not added_special_token:
                     sent_ref = ref[j]
                 else:
@@ -216,11 +232,10 @@ class decoding():
 
                 results.append([sent_ref, sent_tmp])
 
-                # print("ref:", sent_ref)
+
             else:
                 results.append(sent_tmp)
-            # print("hyp:", sent_tmp)
-            # print()
+
 
         return results,pred_output_list,output_embeds,input_embeds
 
